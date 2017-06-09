@@ -19,10 +19,6 @@ module Airbrake
       private
 
       def to_hash(params)
-        # Rails <= 4
-        return params.to_hash if params.respond_to?(:to_hash)
-
-        # Rails >= 5
         params.to_unsafe_h
       end
 
